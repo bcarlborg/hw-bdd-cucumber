@@ -33,11 +33,11 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   And I press "Refresh"
 
   # enter step(s) to ensure that PG and R movies are visible
-  Then I should see "PG"
-  And I should see "R"
+  Then I should see /td=PG/
+  And I should see /td=R/
 
   # enter step(s) to ensure that other movies are not visible
-  Then I should not see /td=G/ 
+  And I should not see /td=G/ 
   And I should not see /td=PG-13/
   And I should not see /td=NC-17/
 
